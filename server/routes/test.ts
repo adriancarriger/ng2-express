@@ -4,7 +4,7 @@ const testRouter: Router = Router();
 
 testRouter.get('/test', (request: Request, response: Response) => {
   response.json({
-    title: 'Greetings.',
+    title: 'Greetings!',
     text: 'Hello Angular 2'
   });
 });

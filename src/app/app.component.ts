@@ -8,7 +8,7 @@ import { ApiService } from './api.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  data: Object;
+  data: any;
   constructor(private apiService: ApiService) { };
   ngOnInit() {
     this.apiService.getStuff()

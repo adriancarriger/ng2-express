@@ -1,11 +1,15 @@
 branch-defaults:
   master:
-    environment: ng2-express-env
+    environment: node-express-env
     group_suffix: null
+environment-defaults:
+  node-express-env:
+    branch: null
+    repository: null
 global:
   application_name: ng2-express
   branch: null
-  default_ec2_keyname: null
+  default_ec2_keyname: aws-eb
   default_platform: node.js
   default_region: us-west-2
   profile: null

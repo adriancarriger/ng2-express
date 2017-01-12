@@ -1,11 +1,11 @@
 import { Router, Response, Request } from 'express';
+import * as db from '../db';
 
 const testRouter: Router = Router();
 
 testRouter.get('/test', (request: Request, response: Response) => {
-  response.json({
-    title: 'Greetings!',
-    text: 'Hello Angular 2'
+  db.getTest(result => {
+    response.json(result);
   });
 });
 

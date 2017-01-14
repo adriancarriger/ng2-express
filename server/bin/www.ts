@@ -6,6 +6,7 @@
 
 import { app } from '../app';
 import * as http from 'http';
+import socketIo = require('socket.io');
 
 /**
  * Get port from environment and store in Express.
@@ -17,6 +18,17 @@ app.set('port', port);
  * Create HTTP server.
  */
 const server = http.createServer(app);
+
+const io = socketIo(server);
+let test = 1;
+io.on('connection', socket => {
+  console.log('connected');
+  setInterval(() => {
+    io.emit('message', 'test message #' + test);
+    test++;
+  }, 2000);
+});
+
 
 /**
  * Listen on provided port, on all network interfaces.
